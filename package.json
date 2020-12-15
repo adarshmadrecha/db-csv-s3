@@ -17,7 +17,7 @@
     "MariDB",
     "Backup"
   ],
-  "author": "Adarsh Madrecha",
+  "author": "Adarsh Madrecha <adarshmadrecha@yahoo.com> (https://adarsh.madrecha.com)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/adarshmadrecha/db-csv-s3/issues"
