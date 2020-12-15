@@ -1,0 +1,26 @@
+{
+  "name": "db-csv-s3",
+  "version": "1.0.0",
+  "description": "MySQL/MariaDB backup utility which converts DB to CSV format and saves in S3",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adarshmadrecha/db-csv-s3.git"
+  },
+  "keywords": [
+    "S3",
+    "CSV",
+    "MySQl",
+    "MariDB",
+    "Backup"
+  ],
+  "author": "Adarsh Madrecha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/adarshmadrecha/db-csv-s3/issues"
+  },
+  "homepage": "https://github.com/adarshmadrecha/db-csv-s3#readme"
+}
