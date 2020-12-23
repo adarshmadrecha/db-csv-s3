@@ -18,7 +18,7 @@ async function db_csv_s3({
   const todayDate = dayjs().format('YYYY-MM-DD HH:mm')
   s3Prefix = s3Prefix ? `${s3Prefix}/` : ''
   // Loop tables
-  tables.forEach(async (t) => {
+  for (const t of tables) {
     let pageno = 1
     while (pageno < 10000) {
       // Call DB function
@@ -36,7 +36,10 @@ async function db_csv_s3({
       pageno += 1;
 
     }
-  });
+  }
+  // tables.forEach(async (t) => {
+
+  // });
 }
 
 module.exports = { db_csv_s3 }
