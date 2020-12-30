@@ -1,4 +1,4 @@
-import { unparse } from 'papaparse';
+const { unparse } = require('papaparse');
 
 async function getDataFromDb({ Knex, tablename, rows, pageno, where, orderby }) {
 
@@ -11,7 +11,7 @@ async function getDataFromDb({ Knex, tablename, rows, pageno, where, orderby }) 
   if (where) {
     sql.where(where)
   }
-  if (orderby) {
+  if (orderby && Object.keys(orderby).length > 0) {
     sql.orderBy(orderby)
   }
 
@@ -23,4 +23,4 @@ function json2CSV(data) {
   return unparse(JSON.stringify(data))
 }
 
-module.export = { getDataFromDb, json2CSV }
+module.exports = { getDataFromDb, json2CSV }

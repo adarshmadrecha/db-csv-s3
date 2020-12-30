@@ -1,7 +1,8 @@
-const { getDataFromDb } = './db'
-import dayjs from 'dayjs';
-import { uploadFileToS3 } from './s3';
-import { json2CSV } from './db';
+const dayjs = require('dayjs');
+
+const { getDataFromDb } = require('./db');
+const { uploadFileToS3 } = require('./s3');
+const { json2CSV } = require('./db');
 
 async function db_csv_s3({
   S3, bucketname, s3Prefix = '',
@@ -17,7 +18,7 @@ async function db_csv_s3({
   const todayDate = dayjs().format('YYYY-MM-DD HH:mm')
   s3Prefix = s3Prefix ? `${s3Prefix}/` : ''
   // Loop tables
-  tables.forEach(t => {
+  for (const t of tables) {
     let pageno = 1
     while (pageno < 10000) {
       // Call DB function
@@ -28,14 +29,17 @@ async function db_csv_s3({
       // convert json to CSV
       const csvData = json2CSV(data)
       // Generate file name
-      const fileName = `${s3Prefix}${todayDate}/${tablename}_${page}.csv`
+      const filename = `${s3Prefix}${todayDate}/${t.table}_${pageno}.csv`
       // Call s3 fucntion
-      await uploadFileToS3({ S3, bucketname, fileName, csvData })
+      await uploadFileToS3({ S3, bucketname, filename, csvData })
 
       pageno += 1;
 
     }
-  });
+  }
+  // tables.forEach(async (t) => {
+
+  // });
 }
 
-module.export = { db_csv_s3 }
+module.exports = { db_csv_s3 }
