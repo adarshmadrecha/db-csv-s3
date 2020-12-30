@@ -1,6 +1,6 @@
 {
   "name": "db-csv-s3",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "MySQL/MariaDB backup utility which converts DB to CSV format and saves in S3",
   "main": "index.js",
   "scripts": {
