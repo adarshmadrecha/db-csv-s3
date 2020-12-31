@@ -11,9 +11,11 @@ async function getDataFromDb({ Knex, tablename, rows, pageno, where, orderby }) 
   if (where) {
     sql.where(where)
   }
-  if (orderby && Object.keys(orderby).length > 0) {
-    sql.orderBy(orderby)
+
+  if (orderby && orderby.column) {
+    sql.orderBy(orderby.column, orderby.order || 'asc')
   }
+  console.log(sql.toString())
 
   return await sql;
 }
