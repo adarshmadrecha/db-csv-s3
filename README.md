@@ -18,7 +18,7 @@ const dbcsv = require('db-csv-s3')
 
 ```
 ## Parameters
-- **S3**-  An S3 service object, including the `accessKeyId`, `secretAccessKey`, `region`, `apiVersion`
+- **S3**-  An S3 service object, including the `accessKeyId`, `secretAccessKey`, `region`, `apiVersion`.<br>
 ex:
 ```js
 const S3 = new AWS.S3({
@@ -37,14 +37,14 @@ const S3 = new AWS.S3({
 - **tables** - An array of objects where you would be specifying the table name, where clause and orderby clause as stated in the example below.
   - Each object will contain the following attributes:-
     - **table** - The name of table.
-    - **where** - This would contain an object specfying multiple parameters for your where clause as stated in the example below.
+    - **where** - This must contain an object specfying multiple parameters for your where clause as stated in the example below.
     - **orderby** - Adds an order by clause to the query. You can specify the column name and the order in which you want the data to be stored.
 
-- **rows** - This limits the maximum number of data/rows per csv file. For ex: If you want a backup of table `user` which consists of `1,20,000` rows and you've specified the `rows` value as `50,000`. Then, 3 CSV files would be generated as a backup of table `user` named `user_1.csv`, `user_2.csv`, `user_3.csv` with `50,000` , `50,000` and `20,000` rows in the respective files. 
+- **rows** - This limits the maximum number of data/rows per csv file. For ex: If you want a backup of table `user` which consists of `1,20,000` rows and you've specified the `rows` value as `50,000`. Then, 3 CSV files would be generated in S3 as a backup of table `user` named `user_1.csv`, `user_2.csv`, `user_3.csv` with `50,000` , `50,000` and `20,000` rows in the respective files. 
 ---
 **NOTE**
 
-Both `where` and `orderby` attribute are optional, you can ignore them while creating the `tables` array object if you want to.<br>
+Both `where` and `orderby` attributes are optional, if you want to you can ignore them while creating the `tables` array objects.<br>
 By default the value given to the `rows` attribute is `50,000`.
 
 ---
