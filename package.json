@@ -34,7 +34,7 @@
   },
   "peerDependencies": {
     "aws-sdk": "^2.815.0",
-    "knex": "^0.95.10"
+    "knex": "^0.95.10 || ^1.0.0"
   },
   "devDependencies": {
     "np": "7.6.1"
