@@ -33,7 +33,7 @@
     "papaparse": "^5.3.2"
   },
   "peerDependencies": {
-    "aws-sdk": "^2.815.0",
+    "aws-sdk": "^2.1101.0",
     "knex": "^0.95.10 || ^1.0.0"
   },
   "devDependencies": {
