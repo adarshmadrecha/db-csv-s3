@@ -1,6 +1,6 @@
 # db-csv-s3
-[![npm version](http://img.shields.io/npm/v/db-csv-s3.svg)](https://npmjs.org/package/db-csv-s3)
-[![npm downloads](https://img.shields.io/npm/dm/db-csv-s3.svg)](https://npmjs.org/package/db-csv-s3)
+[![npm version](http://img.shields.io/npm/v/db-csv-s3.svg)](https://npmjs.com/package/db-csv-s3)
+[![npm downloads](https://img.shields.io/npm/dm/db-csv-s3.svg)](https://npmjs.com/package/db-csv-s3)
 
 
 A simple way to export the database and convert db data to CSV and then upload it to S3 at your specified bucket. An alternative for your data backup.
