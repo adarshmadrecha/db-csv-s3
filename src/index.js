@@ -1,10 +1,9 @@
-const dayjs = require('dayjs');
+import dayjs from "dayjs"
+import { getDataFromDb } from './db';
+import { uploadFileToS3 } from './s3';
+import { json2CSV } from './db';
 
-const { getDataFromDb } = require('./db');
-const { uploadFileToS3 } = require('./s3');
-const { json2CSV } = require('./db');
-
-async function db_csv_s3({
+export async function db_csv_s3({
   S3, bucketname, s3Prefix = '',
   Knex, tables = [],
   rows = 50000,
@@ -41,5 +40,3 @@ async function db_csv_s3({
 
   // });
 }
-
-module.exports = { db_csv_s3 }

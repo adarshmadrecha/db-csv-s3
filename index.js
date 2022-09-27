@@ -1,3 +1,3 @@
-const { db_csv_s3 } = require('./src/index');
+import { db_csv_s3 } from "./src/index"
 
-module.exports = db_csv_s3
+export default db_csv_s3
