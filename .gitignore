@@ -105,3 +105,7 @@ dist
 
 # Test files
 test/
+
+
+# OS generated files
+._*

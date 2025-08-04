@@ -1,7 +1,7 @@
 import dayjs from "dayjs"
-import { getDataFromDb } from './db';
-import { uploadFileToS3 } from './s3';
-import { json2CSV } from './db';
+import { getDataFromDb } from './db.js';
+import { uploadFileToS3 } from './s3.js';
+import { json2CSV } from './db.js';
 
 export async function db_csv_s3({
   S3, bucketname, s3Prefix = '',
@@ -36,7 +36,4 @@ export async function db_csv_s3({
 
     }
   }
-  // tables.forEach(async (t) => {
-
-  // });
 }

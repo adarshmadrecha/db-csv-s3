@@ -1,4 +1,4 @@
-import { unparse } from 'papaparse';
+import Papa from 'papaparse';
 
 export async function getDataFromDb({ Knex, tablename, rows, pageno, where, orderby }) {
 
@@ -21,5 +21,5 @@ export async function getDataFromDb({ Knex, tablename, rows, pageno, where, orde
 
 export function json2CSV(data) {
   // covert and return
-  return unparse(JSON.stringify(data))
+  return Papa.unparse(JSON.stringify(data))
 }
